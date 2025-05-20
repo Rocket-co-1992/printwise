@@ -1,0 +1,18 @@
+<form action="{{ path('materials.store') }}" method="POST" class="max-w-lg mx-auto mt-10 bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-4">Criar Novo Material</h2>
+    
+    <label for="name" class="block text-sm font-medium text-gray-700">Nome do Material</label>
+    <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500" />
+
+    <label for="description" class="block text-sm font-medium text-gray-700 mt-4">Descrição</label>
+    <textarea id="description" name="description" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500"></textarea>
+
+    <label for="price" class="block text-sm font-medium text-gray-700 mt-4">Preço</label>
+    <input type="number" id="price" name="price" required step="0.01" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500" />
+
+    <div class="mt-6">
+        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded-md hover:bg-blue-700">Salvar Material</button>
+    </div>
+</form>
+
+<a href="{{ path('materials.index') }}" class="mt-4 inline-block text-blue-600 hover:underline">Voltar para a lista de materiais</a>

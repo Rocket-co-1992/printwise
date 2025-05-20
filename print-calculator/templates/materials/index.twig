@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais - Backoffice</title>
+    <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Lista de Materiais</h1>
+        <a href="/materials/create" class="bg-blue-500 text-white px-4 py-2 rounded">Adicionar Novo Material</a>
+        <table class="min-w-full mt-4 bg-white border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="border-b px-4 py-2">ID</th>
+                    <th class="border-b px-4 py-2">Nome</th>
+                    <th class="border-b px-4 py-2">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for material in materials %}
+                <tr>
+                    <td class="border-b px-4 py-2">{{ material.id }}</td>
+                    <td class="border-b px-4 py-2">{{ material.name }}</td>
+                    <td class="border-b px-4 py-2">
+                        <a href="/materials/edit/{{ material.id }}" class="text-yellow-500">Editar</a>
+                        <form action="/materials/delete/{{ material.id }}" method="POST" class="inline">
+                            <button type="submit" class="text-red-500">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
